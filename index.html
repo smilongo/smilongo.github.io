@@ -1,48 +1,46 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" lang="fr">
+<html lang="fr">
 <head>
-
     <meta charset="UTF-8">
     <link rel="stylesheet" href="gabarieStyle.css">
     <title>Accueil</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
 </head>
 <body class="bg-dark">
 <header>
     <div class="navBarre">
         <p class="logo">
-            <img th:src="@{/images/logo.png}" alt="Logo"/><br>
+            <img src="images/logo.png" alt="Logo"/><br>
             <span class="spanBlanc">Solidariter</span>
             <span class="spanVert">Communautaire</span>
         </p>
         <div class="navigation">
-            <a th:href="@{/index}"><h5>Accueil</h5></a>
-            <a th:href="@{/associations}"><h5>Associations</h5></a>
-            <a th:href="@{/projets}"><h5>Projets</h5></a>
-            <a th:href="@{/inscription}"><h5>Pas Encore Inscrit ?</h5></a>
-            <a th:href="@{'/individu/'+${session.id}}"><h5>Individu</h5></a>
-            <a href=""><h5>Organisateurs</h5></a>
+            <a href="index.html"><h5>Accueil</h5></a>
+            <a href="associations.html"><h5>Associations</h5></a>
+            <a href="projets.html"><h5>Projets</h5></a>
+            <a href="inscription.html"><h5>Pas Encore Inscrit ?</h5></a>
+            <a href="individu.html?id=123"><h5>Individu</h5></a>
+            <a href="organisateurs.html"><h5>Organisateurs</h5></a>
         </div>
-        <span th:if="${session}!=null" class="text-white text-center">
-            [[${session['prenom']}]]     [[${session['nom']}]]
+        <span class="text-white text-center">
+            Prénom Nom  <!-- Remplacer par les informations utilisateur -->
         </span>
-        <a class="connection"  th:href="@{/connexion}">
-            <img  th:src="@{/images/iconeConnexion.png}" alt="Icone Connexion"/>
+        <a class="connection" href="connexion.html">
+            <img src="images/iconeConnexion.png" alt="Icone Connexion"/>
             <h5>Connexion</h5>
         </a>
-        <a class="deconnection" th:href="@{/deconnexion}">
+        <a class="deconnection" href="deconnexion.html">
             <h5>Deconnexion</h5>
-            <img  th:src="@{/images/iconeConnexion.png}" alt="Icone Deconnexion"/>
+            <img src="images/iconeConnexion.png" alt="Icone Deconnexion"/>
         </a>
     </div>
 </header>
 
 <main>
-    <div th:if="${message!=null}" class="alert alert-success text-center">
-        [[${message}]]
+    <div class="alert alert-success text-center">
+        Message d'information ici  <!-- Remplacer par un message réel -->
     </div>
-    <img class="imageAccueil1" th:src="@{/images/imageAccueil1.png}"/>
+    <img class="imageAccueil1" src="images/imageAccueil1.png" alt="Image d'Accueil 1"/>
 
     <h1 class="titre">Solidariter Communautaire un lien<br>
         fort pour un avenir solidaire !</h1>
@@ -55,7 +53,7 @@
     </p>
 
     <br><br>
-    <img class="imageAccueil2" th:src="@{/images/imageAccueil2.png}"/>
+    <img class="imageAccueil2" src="images/imageAccueil2.png" alt="Image d'Accueil 2"/>
 
     <h3 class="sousTitre">Rejoindre la Solidariter Communautaire</h3>
     <br><br><br><br><br>
@@ -76,7 +74,6 @@
     <br><br>
     <br><br>
     <br><br>
-
 </main>
 
 <footer class="footer">
@@ -91,18 +88,19 @@
             <h6>Ensemble pour un avenir solidaire</h6>
         </div>
         <div>
-            <img src="/images/messagefill.png"/><h6>solidariter-communautaire@gmail.com</h6>
+            <img src="messagefill.png" alt="Email Icon"/><h6>solidariter-communautaire@gmail.com</h6>
         </div>
         <div>
-            <img src="/images/phonefill.png"/><h6>+1 514-376-1620</h6>
+            <img src="phonefill.png" alt="Phone Icon"/><h6>+1 514-376-1620</h6>
         </div>
         <div>
-            <img src="/images/pinfill.png"/><h6>16e Avenue, Montréal, QC</h6>
+            <img src="pinfill.png" alt="Address Icon"/><h6>16e Avenue, Montréal, QC</h6>
         </div>
     </div><br>
 
-    <div class="droitsReserves"><h5>Tous droits réservés © 2024 Solidarité Communautaire - Contribuons ensemble à un
-        monde plus solidaire.</h5></div>
+    <div class="droitsReserves">
+        <h5>Tous droits réservés © 2024 Solidarité Communautaire - Contribuons ensemble à un monde plus solidaire.</h5>
+    </div>
 </footer>
 
 </body>
